@@ -12,6 +12,7 @@ class LoginPageLocators:
 
 class ProductPageLocators:
     ADD_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
+    SUCCESS_MESSAGE = (By.XPATH, "//*[@id='messages']/div[1]/div")
     ITEM_NAME = (By.CSS_SELECTOR, ".product_main > h1")
     ITEM_NAME_IN_BASKET = (By.XPATH, "//*[@id='messages']/div[1]/div/strong")
     ITEM_COST = (By.CSS_SELECTOR, ".product_main > .price_color")
