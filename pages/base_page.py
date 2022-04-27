@@ -3,9 +3,11 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as ec
 from .locators import BasePageLocators
+from .locators import BasketPageLocators
 
 
 class BasePage:
+    """Parent class for any page on the site"""
     def __init__(self, browser, url, timeout=10):
         self.browser = browser
         self.url = url
@@ -15,12 +17,14 @@ class BasePage:
         self.browser.get(self.url)
 
     def go_to_login_page(self):
-        """Open link from main page in browser"""
         login_link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
         login_link.click()
 
+    def go_to_basket_page(self):
+        basket_link = self.browser.find_element(*BasketPageLocators.BASKET_LINK)
+        basket_link.click()
+
     def should_be_login_link(self):
-        """Login link should be visible"""
         assert self.is_element_present(*BasePageLocators.LOGIN_LINK), "Login link is not visible"
 
     def is_element_present(self, how, what):

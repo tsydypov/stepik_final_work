@@ -14,6 +14,12 @@ class LoginPageLocators:
     REG_FORM = (By.CSS_SELECTOR, ".register_form")
 
 
+class BasketPageLocators:
+    BASKET_LINK = (By.XPATH, '//*[@id="default"]/header/div[1]/div/div[2]/span/a')
+    EMPTY_BASKET_MESSAGE = (By.XPATH, "//*[@id='content_inner']/p")
+    ITEMS_IN_BASKET = (By.CSS_SELECTOR, ".basket-items")
+
+
 class ProductPageLocators:
     ADD_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     SUCCESS_MESSAGE = (By.XPATH, "//*[@id='messages']/div[1]/div")
